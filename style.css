@@ -1,0 +1,225 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: white;
+    --text-color: black;
+    --elements-color: #00000029;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body.dark {
+    --background-color: hsl(207,26%,17%);
+    --text-color: white;
+    --elements-color: rgba(255, 255, 255, 0.07);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styling */
+.header-container {
+    box-shadow: 2px 5px 10px #00000060;
+}
+
+.mode {
+    cursor: pointer;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+}
+
+.title {
+    font-weight: 800;
+}
+
+main {
+    padding: 24px;
+}
+
+/* Search Inputs Styling */
+.inputsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchBar {
+    width: 100%;
+    max-width: 400px;
+    padding: 5px;
+    box-shadow: 1px 1px 4px var(--elements-color);
+    border-radius: 4px;
+}
+
+.searchBar input {
+    padding: 10px 15px;
+    width: 80%;
+    font-family: inherit;
+    outline: none;
+    font-size: 16px;
+    color: var(--text-color);
+    opacity: 0.8;
+    border: none;
+    background-color: inherit;
+}
+
+.searchBar input::placeholder {
+    opacity: 0.6;
+}
+
+.selectRegionOptions {
+    width: 100%;
+    max-width: 250px;
+    padding: 9px 12px;
+    appearance: none;
+    border: none;
+    overflow: hidden;
+    color: #999;
+    background-color: inherit;
+    outline: none;
+    box-shadow: 1px 1px 4px var(--elements-color);
+}
+
+.selectRegionOptions option {
+    background-color: inherit;
+}
+
+/* Countries Card Styling */
+.countries-container {
+    max-width: 1200px;
+    margin-inline: auto;
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+}
+
+.country-card {
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 5px 10px var(--elements-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.country-card:hover {
+    transform: scale(1.02);
+    box-shadow: 4px 8px 12px var(--elements-color);
+}
+
+.country-card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-text {
+    padding: 16px;
+}
+
+.card-text p {
+    margin: 4px 0;
+}
+
+.card-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+/* Responsive breakpoints */
+
+/* Medium screens */
+@media (max-width: 768px) {
+    .countries-container {
+        gap: 24px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+}
+
+/* Small screens */
+@media (max-width: 650px) {
+    .inputsContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+/* Very small screens: single column */
+@media (max-width: 400px) {
+    .countries-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 8px;
+    }
+
+    .country-card .card-text {
+        padding: 12px;
+    }
+
+    .country-card .card-title {
+        font-size: 18px;
+    }
+
+    .country-card p {
+        font-size: 14px;
+    }
+
+    .searchBar,
+    .selectRegionOptions {
+        width: 100%;
+    }
+}
+
+/* Shimmer Loading Effect */
+.country-card.shimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--elements-color);
+    min-height: 300px;
+    border-radius: 8px;
+}
+
+.country-card.shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150px;
+    width: 150px;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -150px;
+    }
+    100% {
+        left: 100%;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountryVerse</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E90FF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='2' y1='12' x2='22' y2='12'/%3E%3Cline x1='12' y1='2' x2='12' y2='22'/%3E%3Cpath d='M4.93 4.93a10 10 0 0 0 14.14 14.14'/%3E%3Cpath d='M19.07 4.93a10 10 0 0 0-14.14 14.14'/%3E%3C/svg%3E">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,regular,500,600,700,800" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="header-content">
+         <h2 class="title">Where in the world?</h2>
+        <p class="mode"> <i class="fa-solid fa-moon"></i>  &nbsp; &nbsp;Dark Mode</p>
+        </div>
+    
+    </header>
+    <main>
+        <div class="inputsContainer">
+            <div class="searchBar">
+                <i class="fa-solid fa-magnifying-glass"></i> &nbsp;
+                <input  type="text" placeholder="Search for a Country">
+            </div>
+            <select class="selectRegionOptions">
+                <option hidden>Select region</option>
+                <option value="Europe">Europe</option>
+                <option value="America">America</option>
+                <option value="Africa">Africa</option>
+                <option value="Asia">Asia</option>
+                <option value="Oceania">Oceania</option>
+
+            </select>
+        </div>
+
+        <div class="countries-container">         
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
